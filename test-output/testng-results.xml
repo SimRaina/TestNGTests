@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-18T09:45:53 CET" name="Suite" finished-at="2022-11-18T09:46:59 CET" duration-ms="65396">
+  <suite started-at="2022-11-18T10:00:19 CET" name="Suite" finished-at="2022-11-18T10:00:19 CET" duration-ms="73">
     <groups>
     </groups>
-    <test started-at="2022-11-18T09:45:53 CET" name="Firefox" finished-at="2022-11-18T09:45:58 CET" duration-ms="4772">
-      <class name="com.testng.tests.TestNGTests.Test_Parallel">
-        <test-method signature="browserTest(java.lang.String)[pri:0, instance:com.testng.tests.TestNGTests.Test_Parallel@5b1669c0]" started-at="2022-11-18T09:45:54 CET" name="browserTest" finished-at="2022-11-18T09:45:58 CET" duration-ms="4725" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <exception class="io.github.bonigarcia.wdm.config.WebDriverManagerException">
+    <test started-at="2022-11-18T10:00:19 CET" name="Test" finished-at="2022-11-18T10:00:19 CET" duration-ms="73">
+      <class name="com.testng.tests.TestNGTests.Test_ListenersFromXML">
+        <test-method signature="test()[pri:0, instance:com.testng.tests.TestNGTests.Test_ListenersFromXML@47d9a273]" started-at="2022-11-18T10:00:19 CET" name="test" finished-at="2022-11-18T10:00:19 CET" duration-ms="19" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[There was an error creating WebDriver object for Firefox]]>
+              <![CDATA[expected [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[io.github.bonigarcia.wdm.config.WebDriverManagerException: There was an error creating WebDriver object for Firefox
-at io.github.bonigarcia.wdm.WebDriverManager.instantiateDriver(WebDriverManager.java:1775)
-at io.github.bonigarcia.wdm.WebDriverManager.create(WebDriverManager.java:425)
-at com.testng.tests.TestNGTests.Test_Parallel.browserTest(Test_Parallel.java:26)
+              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertFalse(Assert.java:78)
+at org.testng.Assert.assertFalse(Assert.java:88)
+at com.testng.tests.TestNGTests.Test_ListenersFromXML.test(Test_ListenersFromXML.java:12)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -40,62 +35,63 @@ at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:806)
 at org.testng.TestRunner.run(TestRunner.java:601)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:471)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.lang.reflect.InvocationTargetException
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at io.github.bonigarcia.wdm.webdriver.WebDriverCreator.createLocalWebDriver(WebDriverCreator.java:64)
-at io.github.bonigarcia.wdm.WebDriverManager.createLocalWebDriver(WebDriverManager.java:1949)
-at io.github.bonigarcia.wdm.WebDriverManager.instantiateDriver(WebDriverManager.java:1764)
-... 24 more
-Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'SRAINA-NB', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}}]
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:144)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:102)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:242)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:110)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:98)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:94)
-... 32 more
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- io.github.bonigarcia.wdm.config.WebDriverManagerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- browserTest -->
-      </class> <!-- com.testng.tests.TestNGTests.Test_Parallel -->
-    </test> <!-- Firefox -->
-    <test started-at="2022-11-18T09:45:53 CET" name="Chrome" finished-at="2022-11-18T09:46:59 CET" duration-ms="65396">
-      <class name="com.testng.tests.TestNGTests.Test_Parallel">
-        <test-method signature="browserTest(java.lang.String)[pri:0, instance:com.testng.tests.TestNGTests.Test_Parallel@4c1909a3]" started-at="2022-11-18T09:45:54 CET" name="browserTest" finished-at="2022-11-18T09:46:59 CET" duration-ms="65350" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- test -->
+        <test-method signature="test1()[pri:0, instance:com.testng.tests.TestNGTests.Test_ListenersFromXML@47d9a273]" started-at="2022-11-18T10:00:19 CET" name="test1" finished-at="2022-11-18T10:00:19 CET" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- browserTest -->
-      </class> <!-- com.testng.tests.TestNGTests.Test_Parallel -->
-    </test> <!-- Chrome -->
+        </test-method> <!-- test1 -->
+        <test-method signature="test2()[pri:0, instance:com.testng.tests.TestNGTests.Test_ListenersFromXML@47d9a273]" started-at="2022-11-18T10:00:19 CET" name="test2" finished-at="2022-11-18T10:00:19 CET" depends-on-methods="com.testng.tests.TestNGTests.Test_ListenersFromXML.test" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.testng.tests.TestNGTests.Test_ListenersFromXML.test2() on instance com.testng.tests.TestNGTests.Test_ListenersFromXML@47d9a273 depends on not successfully finished methods 
+[com.testng.tests.TestNGTests.Test_ListenersFromXML.test() on instance com.testng.tests.TestNGTests.Test_ListenersFromXML@47d9a273]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.testng.tests.TestNGTests.Test_ListenersFromXML.test2() on instance com.testng.tests.TestNGTests.Test_ListenersFromXML@47d9a273 depends on not successfully finished methods 
+[com.testng.tests.TestNGTests.Test_ListenersFromXML.test() on instance com.testng.tests.TestNGTests.Test_ListenersFromXML@47d9a273]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+      </class> <!-- com.testng.tests.TestNGTests.Test_ListenersFromXML -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
