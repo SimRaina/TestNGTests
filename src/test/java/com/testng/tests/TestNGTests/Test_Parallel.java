@@ -1,10 +1,12 @@
-package testCases_TestNG;
+package com.testng.tests.TestNGTests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Test_Parallel {
 
@@ -15,14 +17,14 @@ public class Test_Parallel {
     public void browserTest(String browse) {
 
         if(browse.equalsIgnoreCase("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Resources\\Drivers\\chromedriver.exe\\");
+            driver=WebDriverManager.chromedriver().create();
             driver = new ChromeDriver();
         }
 
         else if(browse.equalsIgnoreCase("Firefox")) {
 
-            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\Resources\\Drivers\\geckodriver.exe\\");
-            driver = new FirefoxDriver();
+            driver=WebDriverManager.firefoxdriver().create();
+        	driver = new FirefoxDriver();
         }
 
         driver.manage().window().maximize();
