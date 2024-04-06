@@ -6,8 +6,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class Test_Parallel {
 
     WebDriver driver;
@@ -17,13 +15,11 @@ public class Test_Parallel {
     public void browserTest(String browse) {
 
         if(browse.equalsIgnoreCase("Chrome")) {
-            driver=WebDriverManager.chromedriver().create();
             driver = new ChromeDriver();
         }
 
         else if(browse.equalsIgnoreCase("Firefox")) {
 
-            driver=WebDriverManager.firefoxdriver().create();
         	driver = new FirefoxDriver();
         }
 
